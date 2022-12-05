@@ -17,4 +17,55 @@ class Spaceship extends Floater{
     myXspeed = myYspeed = 0;
     myPointDirection = (double)(Math.random()*360);
   }
+  public void showLeftFire(){
+    int [] leftFireX = new int[] {-20,-40,-20,-20};
+    int [] leftFireY = new int[] {-13,-7,1,-13};
+    float dRadians = (float)(myPointDirection*(Math.PI/180));
+    translate((float)myCenterX, (float)myCenterY);
+    //rotate so that the polygon will be drawn in the correct direction
+    rotate(dRadians);
+    fill(255,0,0);
+    beginShape();
+    for (int nI = 0; nI < 4; nI++)
+    {
+      vertex(leftFireX[nI],leftFireY[nI]);
+    }
+    endShape(CLOSE);
+     rotate(-1*dRadians);
+    translate(-1*(float)myCenterX, -1*(float)myCenterY);
+  }
+  public void showRightFire(){
+    int [] rightFireX = new int[] {-20,-40,-20,-20};
+    int [] rightFireY = new int[] {0,6,14,0};
+    float dRadians = (float)(myPointDirection*(Math.PI/180));
+    translate((float)myCenterX, (float)myCenterY);
+    //rotate so that the polygon will be drawn in the correct direction
+    rotate(dRadians);
+    fill(255,0,0);
+    beginShape();
+    for (int nI = 0; nI < 4; nI++)
+    {
+      vertex(rightFireX[nI],rightFireY[nI]);
+    }
+    endShape(CLOSE);
+     rotate(-1*dRadians);
+    translate(-1*(float)myCenterX, -1*(float)myCenterY);
+  }
+  public void boom(double x, double y){
+    fill(255,0,0);
+    int[] xbCorners = new int[]{0,3,3,6,4,5,2,2,0,-3,-3,-6,-4,-7,-4,-4,-2,-1,0};
+    int[] ybCorners = new int[]{4,6,3,2,0,-3,-2,-6,-3,-5,-2,-3,0,1,2,5,3,6,4};
+    beginShape();
+    for (int nI = 0; nI < 4; nI++)
+    {
+      vertex(xbCorners[nI],ybCorners[nI]);
+    }
+    endShape(CLOSE);
+  }
+  public double getX(){
+    return myCenterX;
+  }
+  public double getY(){
+    return myCenterY;
+  }
 }
