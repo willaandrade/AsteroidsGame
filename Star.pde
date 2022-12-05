@@ -10,8 +10,5 @@ class Star{
     fill(myC);
     noStroke();
     ellipse(myX,myY,5,5);
-  }
-  
-  
-  
+ }
 }
