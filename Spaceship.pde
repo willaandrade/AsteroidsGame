@@ -51,17 +51,7 @@ class Spaceship extends Floater{
      rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
   }
-  public void boom(double x, double y){
-    fill(255,0,0);
-    int[] xbCorners = new int[]{0,3,3,6,4,5,2,2,0,-3,-3,-6,-4,-7,-4,-4,-2,-1,0};
-    int[] ybCorners = new int[]{4,6,3,2,0,-3,-2,-6,-3,-5,-2,-3,0,1,2,5,3,6,4};
-    beginShape();
-    for (int nI = 0; nI < 4; nI++)
-    {
-      vertex(xbCorners[nI],ybCorners[nI]);
-    }
-    endShape(CLOSE);
-  }
+ 
   public double getX(){
     return myCenterX;
   }
