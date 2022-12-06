@@ -11,6 +11,11 @@ public void setup() {
   asteroids.add(new Asteroid(-50));
   asteroids.add(new Asteroid(-100));
   asteroids.add(new Asteroid(-150));
+  asteroids.add(new Asteroid(-150));
+  asteroids.add(new Asteroid(-250));
+  asteroids.add(new Asteroid(-350));
+  asteroids.add(new Asteroid(-250));
+  asteroids.add(new Asteroid(-250));
 }
 
 public void draw() {
@@ -23,12 +28,12 @@ public void draw() {
   for (int i = 0; i<asteroids.size(); i++) {
     asteroids.get(i).show();
     asteroids.get(i).move();
-    if ((asteroids.get(i).getX()< sal.getX()+10 && asteroids.get(i).getX()> sal.getX()-10 && asteroids.get(i).getY()>sal.getY()-10 && asteroids.get(i).getY()<sal.getY()+10) || asteroids.get(i).getY()>height) {
-      sal.boom(asteroids.get(i).getX(), asteroids.get(i).getY()); 
+    float d = dist((float)sal.getX(),(float)sal.getY(),(float)asteroids.get(i).getX(),(float)asteroids.get(i).getY()); 
+     if (d<30){
       asteroids.remove(i);
       i--;
-    }
-  }
+     }
+}
 }
 public void keyPressed() {
   if (key == 'd') {
