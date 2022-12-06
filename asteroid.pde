@@ -33,10 +33,4 @@ class Asteroid extends Floater{
   public double getY(){
     return myCenterY;
   }
-  public void disappear(){
-    if (myCenterX < sal.getX()+10 && myCenterX> sal.getX()-10 && myCenterY>sal.getY()-10 && myCenterY<sal.getY()+10){
-      
-    }
-    
-  }
 }//end class
