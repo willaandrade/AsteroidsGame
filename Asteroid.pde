@@ -27,10 +27,4 @@ class Asteroid extends Floater{
     myCenterY += myYspeed;  
     myPointDirection+=rotateSpeed;
   }//end move
-  public double getX(){
-    return myCenterX;
-  }
-  public double getY(){
-    return myCenterY;
-  }
 }//end class
