@@ -4,7 +4,7 @@ class Spaceship extends Floater{
     corners = 19;
     xCorners = new int[]{15,14,13,11,9,6,4,-15,-15,-12,-12,-15,-15,4,6,9,11,13,14};
     yCorners = new int[]{0,-3,-5,-8,-10,-12,-13,-13,-4,-4,4,4,13,13,12,10,8,5,3};
-    myColor = 100;
+    myColor = color(175,200,200);
     myCenterX = width/2;
     myCenterY =  height/2;
     myXspeed = 0;
@@ -51,11 +51,16 @@ class Spaceship extends Floater{
      rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
   }
- 
-  public double getX(){
-    return myCenterX;
-  }
-  public double getY(){
-    return myCenterY;
+  public void boom(double x, double y){//needs to include time in order to work properly
+    fill(255,0,0);
+    int[] xbCorners = new int[]{0,3,3,6,4,5,2,2,0,-3,-3,-6,-4,-7,-4,-4,-2,-1,0};
+    int[] ybCorners = new int[]{4,6,3,2,0,-3,-2,-6,-3,-5,-2,-3,0,1,2,5,3,6,4};
+    translate((float)x, (float)y);
+    beginShape();
+    for (int nI = 0; nI < 4; nI++)
+    {
+      vertex(xbCorners[nI],ybCorners[nI]);
+    }
+    endShape(CLOSE);
   }
 }
