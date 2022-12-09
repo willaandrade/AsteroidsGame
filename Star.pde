@@ -4,11 +4,11 @@ class Star{
   public Star(){
     myX = (int)(Math.random()*width);
     myY = (int)(Math.random()*height);
-    myC = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+    myC = color(255,255,(int)(Math.random()*135)+120);
   }
  public void show(){
     fill(myC);
     noStroke();
     ellipse(myX,myY,5,5);
- }
+  }
 }
